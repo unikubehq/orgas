@@ -1,8 +1,14 @@
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/unikubehq/orgas/main/logo_orgas.png" width="400">
+</p>
+<p align="center">
+    <a href="https://github.com/pre-commit/pre-commit"><img src="https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white" alt="pre-commit"></a>
+    <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black"></a>
+</p>
 
+# Unikube Orgas Service
 
-This is the *UNIKUBE* Server-side project.
+This is the *UNIKUBE* backend service to manage organization related actions and data.
 
 Authentication
 ==============
