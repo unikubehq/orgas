@@ -193,6 +193,25 @@ class UpdateOrganizationMemberInvitation(graphene.Mutation):
         return cls(ok=True)
 
 
+class DeleteOrganization(graphene.Mutation):
+    class Arguments:
+        id = graphene.UUID()
+
+    ok = graphene.Boolean()
+
+    @classmethod
+    def mutate(cls, root, info, **kwargs):
+        organization_id = str(kwargs.get("id"))
+        if info.context.permissions.has_permission(organization_id, "organization:edit"):
+            try:
+                organization = Organization.objects.get(id=organization_id)
+                organization.delete()
+            except Organization.DoesNotExist:
+                raise GraphQLError("This organization does not exist.")
+            return cls(ok=True)
+        raise GraphQLError("This user does not have permission to delete this organization.")
+
+
 class Mutation(graphene.ObjectType):
     create_update_organization = CreateUpdateOrganization.Field()
     create_invitation = CreateOrganizationMemberInvitation.Field()
@@ -200,3 +219,4 @@ class Mutation(graphene.ObjectType):
     answer_invitation = UpdateOrganizationMemberInvitation.Field()
     update_organization_member = UpdateOrganizationMember.Field()
     remove_organization_member = DeleteOrganizationMember.Field()
+    delete_organization = DeleteOrganization.Field()
