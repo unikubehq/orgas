@@ -51,7 +51,7 @@ jobs:
           KEYCLOAK_PORT: 8091
           KEYCLOAK_REALM_NAME: unikube
           KEYCLOAK_CLIENT_ID: orgas
-          KEYCLOAK_CLIENT_SECRET: ${{ secrets.KEYCLOAK_CLIENT_SECRET }}
+          KEYCLOAK_CLIENT_SECRET: 79538492-73bf-47f9-8050-874326933260
       - name: Upload coverage data to coveralls.io
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

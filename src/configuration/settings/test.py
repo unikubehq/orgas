@@ -21,10 +21,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 INSTALLED_APPS = [
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "sops",
-    "projects",
+    "organization",
     "gql",
-    "backoffice",
 ]
 
 LOGGING = {
@@ -66,7 +64,7 @@ DATABASES = {
 if env.str("DATABASE_PASSWORD", None):
     DATABASES["default"]["PASSWORD"] = env.str("DATABASE_PASSWORD")
 
-AUTH_USER_MODEL = "backoffice.AdminUser"
+# AUTH_USER_MODEL = "backoffice.AdminUser"
 
 GRAPHENE_PER_PAGE = 30
 
