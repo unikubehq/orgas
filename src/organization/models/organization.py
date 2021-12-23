@@ -1,4 +1,3 @@
-import uuid
 from typing import Optional
 
 from commons.keycloak.abstract_models import KeycloakResource
@@ -15,11 +14,8 @@ def get_default_avatar_image():
 
 class Organization(TitleSlugDescriptionModel, TimeStampedModel, KeycloakResource):
     resource_handler = OrganizationResourceHandler
-
     secret_token = models.CharField(max_length=300, blank=True)
-
     on_trial = models.BooleanField()
-
     avatar_image = models.FileField(blank=True, null=True, default=get_default_avatar_image)
 
     def __str__(self):

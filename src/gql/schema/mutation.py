@@ -2,7 +2,6 @@ import graphene
 from commons.keycloak.abstract_models import KeycloakResource
 from commons.keycloak.users import UserHandler
 from django.core.exceptions import ValidationError
-from django.core.validators import validate_email
 from django.db import IntegrityError
 from graphene_django.forms.mutation import DjangoModelFormMutation
 from graphql import GraphQLError

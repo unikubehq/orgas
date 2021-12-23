@@ -66,7 +66,6 @@ class OrganizationInvitationNode(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
-
     all_organizations = page_field_factory(OrganizationNode)
     organization = graphene.Field(OrganizationNode, id=graphene.UUID(required=True))
     user_invitations = page_field_factory(OrganizationInvitationNode)
